@@ -1,7 +1,7 @@
-Ink-Global
+Berlin Clock
 ==========
 
-Ink-Global Test
+Berlin Clock Test
 ---------------
 
 Simple Maven project to solve the problem below
