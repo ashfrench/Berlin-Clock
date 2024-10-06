@@ -1,6 +1,8 @@
 .idea
 *.iml
 
+target
+
 berlin-clock-test/target
 
 # Windows image file caches
