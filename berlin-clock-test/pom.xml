@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>Ashley</groupId>
-    <artifactId>ink-global</artifactId>
+    <artifactId>Berlin-Clock</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

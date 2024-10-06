@@ -1,4 +1,4 @@
-package inkglobal.test;
+package berlin.clock.test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

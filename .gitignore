@@ -1,7 +1,7 @@
 .idea
 *.iml
 
-ink-global-test/target
+berlin-clock-test/target
 
 # Windows image file caches
 Thumbs.db

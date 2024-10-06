@@ -1,4 +1,4 @@
-package inkglobal.test;
+package berlin.clock.test;
 
 import org.junit.Assert;
 import org.junit.Test;
