@@ -1,7 +1,10 @@
 package berlin.clock.test;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static berlin.clock.test.BerlinClock.getBerlinClock;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Created by Ash on 07/10/2014.
@@ -9,39 +12,39 @@ import org.junit.Test;
 public class BerlinClockTest {
 
     @Test
-    public void testClockValid() throws InvalidTimeFormat {
-        String berlinClock = BerlinClock.getBerlinClock("00:00:00");
-        Assert.assertEquals("Y OOOO OOOO OOOOOOOOOOO OOOO", berlinClock);
+    public void testClockValid() {
+        String berlinClock = getBerlinClock("00:00:00");
+        assertEquals("Y OOOO OOOO OOOOOOOOOOO OOOO", berlinClock);
 
-        String berlinClock1 = BerlinClock.getBerlinClock("13:17:01");
-        Assert.assertEquals("O RROO RRRO YYROOOOOOOO YYOO", berlinClock1);
+        String berlinClock1 = getBerlinClock("13:17:01");
+        assertEquals("O RROO RRRO YYROOOOOOOO YYOO", berlinClock1);
 
-        String berlinClock2 = BerlinClock.getBerlinClock("23:59:59");
-        Assert.assertEquals("O RRRR RRRO YYRYYRYYRYY YYYY", berlinClock2);
+        String berlinClock2 = getBerlinClock("23:59:59");
+        assertEquals("O RRRR RRRO YYRYYRYYRYY YYYY", berlinClock2);
     }
 
-    @Test(expected = InvalidTimeFormat.class)
-    public void testClockInvalidInput() throws InvalidTimeFormat {
-        BerlinClock.getBerlinClock("RUBBISH");
+    @Test
+    public void testClockInvalidInput() {
+        assertThrows(InvalidTimeFormat.class, () -> getBerlinClock("RUBBISH"));
     }
 
-    @Test(expected = InvalidTimeFormat.class)
-    public void testClockInvalidFormat() throws InvalidTimeFormat {
-        BerlinClock.getBerlinClock("15-45-24");
+    @Test
+    public void testClockInvalidFormat() {
+        assertThrows(InvalidTimeFormat.class, () -> getBerlinClock("15-45-24"));
     }
 
-    @Test(expected = InvalidTimeFormat.class)
-    public void testClockInvalidHours() throws InvalidTimeFormat {
-        BerlinClock.getBerlinClock("24:00:00");
+    @Test
+    public void testClockInvalidHours() {
+        assertThrows(InvalidTimeFormat.class, () -> getBerlinClock("24:00:00"));
     }
 
-    @Test(expected = InvalidTimeFormat.class)
-    public void testClockInvalidMinutes() throws InvalidTimeFormat {
-        BerlinClock.getBerlinClock("15:65:00");
+    @Test
+    public void testClockInvalidMinutes() {
+        assertThrows(InvalidTimeFormat.class, () -> getBerlinClock("15:65:00"));
     }
 
-    @Test(expected = InvalidTimeFormat.class)
-    public void testClockInvalidSeconds() throws InvalidTimeFormat {
-        BerlinClock.getBerlinClock("15:45:85");
+    @Test
+    public void testClockInvalidSeconds() {
+        assertThrows(InvalidTimeFormat.class, () -> getBerlinClock("15:45:85"));
     }
 }

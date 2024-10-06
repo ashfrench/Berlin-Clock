@@ -21,7 +21,7 @@ public class BerlinClock {
     public static final String LAMP_YELLOW = "Y";
     public static final String LAMP_RED = "R";
 
-    public static String getBerlinClock(String timeString) throws InvalidTimeFormat {
+    public static String getBerlinClock(String timeString) {
         try {
             Date date = dateFormat.parse(timeString);
 
@@ -38,7 +38,7 @@ public class BerlinClock {
         }
     }
 
-    private static String getBerlinClock(int hours, int minutes, int seconds) throws InvalidTimeFormat {
+    private static String getBerlinClock(int hours, int minutes, int seconds) {
         if(!isValid(hours, minutes, seconds)){
             throw new InvalidTimeFormat("Invalid time format");
         }
