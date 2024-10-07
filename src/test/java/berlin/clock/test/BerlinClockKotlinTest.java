@@ -1,6 +1,5 @@
 package berlin.clock.test;
 
-import berlin.clock.test.BerlinClock;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Created by Ash on 07/10/2014.
  */
-public class BerlinClockTest {
+public class BerlinClockKotlinTest {
 
     @Test
     public void testClockValid() {
@@ -49,6 +48,6 @@ public class BerlinClockTest {
     }
 
     private String getBerlinClock(String time) {
-        return new BerlinClock().getBerlinClock(time);
+        return new BerlinClockKotlin().getBerlinClock(time);
     }
 }

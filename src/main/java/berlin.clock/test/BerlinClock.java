@@ -1,5 +1,7 @@
 package berlin.clock.test;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -8,7 +10,7 @@ import java.util.Date;
 /**
  * Created by Ash on 07/10/2014.
  */
-public class BerlinClock {
+public class BerlinClock implements BerlinClockInterface {
 
     public static final String TIME_FORMAT = "HH:mm:ss";
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat(TIME_FORMAT);
@@ -21,7 +23,8 @@ public class BerlinClock {
     public static final String LAMP_YELLOW = "Y";
     public static final String LAMP_RED = "R";
 
-    public static String getBerlinClock(String timeString) {
+    @NotNull
+    public String getBerlinClock(@NotNull String timeString) {
         try {
             Date date = dateFormat.parse(timeString);
 
